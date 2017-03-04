@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.Serialization;
+using System.Xml.Serialization;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Net;
+
 
 namespace bookXchangeServer
 {
@@ -35,9 +36,9 @@ namespace bookXchangeServer
                     Console.WriteLine("Connected");
 
                     NetworkStream stream = client.GetStream();
-
-                    IFormatter formatter = new BinaryFormatter();
-                    Listing listing = (Listing)formatter.Deserialize(stream);
+                    XmlSerializer serializer = new XmlSerializer(typeof(Listing));
+                  //  IFormatter formatter = new BinaryFormatter();
+                    Listing listing = (Listing)serializer.Deserialize(stream);
                     Console.WriteLine("Created new listing with id " + listing.GetListingID().ToString() + ". Success!");
                     client.Close();
                 } while (true);
