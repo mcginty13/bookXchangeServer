@@ -8,15 +8,26 @@ using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Net;
+using ClassLibrary1;
 
 
 namespace bookXchangeServer
 {
     class Program
     {
+        public static List<Listing> listOfListings = new List<Listing>();
         static void Main(string[] args)
         {
-            DoRead();
+            int i = -1;
+            do
+            {
+DataReciever.RecieveData();
+                i++;
+            string bookID = listOfListings[i].GetBookID();
+            Console.WriteLine(bookID);
+            } while (true);
+            
+            Console.ReadKey();
         }
         public static void DoRead()
         {
@@ -36,10 +47,11 @@ namespace bookXchangeServer
                     Console.WriteLine("Connected");
 
                     NetworkStream stream = client.GetStream();
-                    XmlSerializer serializer = new XmlSerializer(typeof(Listing));
+                    XmlSerializer serializer = new XmlSerializer(typeof(byte[]));
                   //  IFormatter formatter = new BinaryFormatter();
-                    Listing listing = (Listing)serializer.Deserialize(stream);
-                    Console.WriteLine("Created new listing with id " + listing.GetListingID().ToString() + ". Success!");
+                    byte[] data = (byte[])serializer.Deserialize(stream);
+                    byte[] data2 = data;
+                    // Console.WriteLine("Created new listing with id " + listing.GetListingID().ToString() + ". Success!");
                     client.Close();
                 } while (true);
 

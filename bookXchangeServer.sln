@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookXchangeServer", "bookXchangeServer\bookXchangeServer.csproj", "{7288D786-8284-47C4-8708-5168BA104599}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "..\..\..\..\Git repos\bookXchange_win\ClassLibrary1\ClassLibrary1.csproj", "{067A6D66-10C9-4FDF-AE4B-7D0F48A9D08A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7288D786-8284-47C4-8708-5168BA104599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7288D786-8284-47C4-8708-5168BA104599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7288D786-8284-47C4-8708-5168BA104599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067A6D66-10C9-4FDF-AE4B-7D0F48A9D08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067A6D66-10C9-4FDF-AE4B-7D0F48A9D08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067A6D66-10C9-4FDF-AE4B-7D0F48A9D08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067A6D66-10C9-4FDF-AE4B-7D0F48A9D08A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
